@@ -28,6 +28,18 @@ export class HomePage {
   }
   private brightButton: any = {
   }
+  private birdButton: any = {
+  }
+  private natureButton: any = {
+  }
+  private musicButton: any = {
+  }
+  private lowButton: any = {
+  }
+  private medButton: any = {
+  }
+  private highButton: any = {
+  }
   private lightHistory: any = {
     device: 'hueLightMen',
     bri: 256,
@@ -47,6 +59,8 @@ export class HomePage {
     //this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
 
     this.defaultLightButtonColors();
+    this.defaultTrackButtonColors();
+    this.defaultVolumeButtonColors()
 
   }
 
@@ -79,6 +93,7 @@ export class HomePage {
     }
   }
 
+  // Change the light color
   changeColor(type) {
 
     this.defaultLightButtonColors();
@@ -124,6 +139,40 @@ export class HomePage {
     this.lightProvider.changeHueLightColor(this.lightHistory.device, this.lightHistory.bri, this.lightHistory.sat, this.lightHistory.xy);
   }
 
+  //Change the song track
+  changeTrack(type) {
+    this.defaultTrackButtonColors();
+    switch (type) {
+      case 'bird':
+        this.birdButton = this.disableButton;
+        break;
+      case 'nature':
+        this.natureButton = this.disableButton;
+        break;
+      case 'music':
+        this.musicButton = this.disableButton;
+        break;
+    }
+  }
+
+   //Change the Volume
+   changeVolume(type) {
+    this.defaultVolumeButtonColors();
+    switch (type) {
+      case 'low':
+        this.lowButton = this.disableButton;
+        break;
+      case 'med':
+        this.medButton = this.disableButton;
+        break;
+      case 'high':
+        this.highButton = this.disableButton;
+        break;
+    }
+  }
+
+  //======================Default Value Functions===============================//
+
   defaultLightButtonColors() {
     this.whiteButton = {
       bgColor: 'white',
@@ -153,4 +202,23 @@ export class HomePage {
       disabled: false
     }
   }
+
+  defaultTrackButtonColors() {
+    this.natureButton = this.birdButton = this.musicButton = {
+      bgColor: 'white',
+      border: '2px solid black',
+      color: 'black',
+      disabled: false
+    }
+  }
+
+  defaultVolumeButtonColors() {
+    this.lowButton = this.medButton = this.highButton = {
+      bgColor: 'white',
+      border: '2px solid black',
+      color: 'black',
+      disabled: false
+    }
+  }
+
 }

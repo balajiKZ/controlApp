@@ -4,8 +4,7 @@ page-home {
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
-
-    .main-button{
+    .main-button {
         width: 150px;
         height: 150px;
         border-radius: 50%;
@@ -14,61 +13,83 @@ page-home {
         color: white;
         font-size: 4rem;
     }
-
-    .light-main{
+    .light-main {
         top: 50px;
     }
-
-    .sound-main{
+    .sound-main {
         top: 300px;
     }
-
-    .scent-main{
+    .scent-main {
         top: 550px;
     }
-
-    .main-button:active{
+    .main-button:active {
         background-color: #FFF;
         opacity: 0.8;
-        color:black;
+        color: black;
     }
-
-    .light-line{
-        top:240px; 
+    .light-line {
+        top: 240px;
     }
-
-    .sound-line{
+    .sound-line {
         top: 510px;
     }
-
-    .normal-button{
+    .normal-button {
         width: 150px;
         height: 50px;
         border-radius: 2rem;
         font-size: 2rem;
     }
-
-    .light-white{
+    .light-white {
         top: 40px;
     }
-
-    .mid-btn{
+    .mid-btn {
         left: 630px;
     }
-
-    .left-btn{
+    .left-btn {
         left: 300px;
     }
-
-    .right-btn{
+    .right-btn {
         left: 960px;
     }
-
-    .sound-text{
-        left:350px;
+    .sound-text {
+        left: 350px;
         top: 295px;
-        font-size:4rem;
+        font-size: 4rem;
         color: white;
     }
-
+    .track-button {
+        width: 70px;
+        height: 70px;
+        border-radius: 2rem;
+        font-size: 1.5rem;
+    }
+    .first-btn {
+        left: 520px;
+    }
+    .second-btn {
+        left: 620px;
+    }
+    .third-btn {
+        left: 720px;
+    }
+    .scent-text {
+        left: 350px;
+        top: 550px;
+        font-size: 4rem;
+        color: white;
+    }
+    .clo2-text {
+        left: 750px;
+        top: 550px;
+        font-size: 4rem;
+        color: white;
+    }
+    .scent-toggle {
+        top: 555px !important;
+        left: 480px;
+    }
+    .clo2-toggle {
+        top: 555px !important;
+        left: 870px;
+    }
 }
