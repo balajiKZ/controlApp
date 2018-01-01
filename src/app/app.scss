@@ -14,3 +14,22 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+[abs]{
+    position: absolute;
+}
+
+[left-25]{
+    left:25px;
+}
+
+[left-200]{
+    left:200px;
+}
+
+[top-140]{
+    top:140px;
+}
+
+[top-420]{
+    top:420px;
+}

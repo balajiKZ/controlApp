@@ -1,14 +1,78 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <button class="main-button light-main" (click)="toggle('light')" abs left-25>
+    <ion-icon [name]="lightStatus ? 'icon-light' :'icon-light-off'"> </ion-icon>
+  </button>
+  <button class="main-button sound-main" (click)="toggle('sound')" abs left-25>
+    <ion-icon [name]="soundStatus ? 'volume-up' :'volume-off'"></ion-icon>
+  </button>
+  <button class="main-button scent-main" (click)="toggle('scent')" abs left-25>
+    <ion-icon [name]="scentStatus ? 'icon-scent' :'icon-scent-off'"></ion-icon>
+  </button>
+
+  <!--""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""-->
+
+  <button class="normal-button mid-btn light-white" [style.backgroundColor]="whiteButton.bgColor" [style.border]="whiteButton.border"
+    [style.color]="whiteButton.color" (click)="changeColor('white')" [disabled]="whiteButton.disabled" abs>
+    White
+  </button>
+
+  <button class="normal-button left-btn" [style.backgroundColor]="darkButton.bgColor" [style.border]="darkButton.border" [style.color]="darkButton.color"
+    (click)="changeColor('dark')" [disabled]="darkButton.disabled" abs top-140>
+    Dark
+  </button>
+
+  <button class="normal-button mid-btn" [style.backgroundColor]="nominalButton.bgColor" [style.border]="nominalButton.border"
+    [style.color]="nominalButton.color" (click)="changeColor('nominal')" [disabled]="nominalButton.disabled" abs top-140>
+    Nominal
+  </button>
+
+  <button class="normal-button right-btn" [style.backgroundColor]="brightButton.bgColor" [style.border]="brightButton.border"
+    [style.color]="brightButton.color" (click)="changeColor('bright')" [disabled]="brightButton.disabled" abs top-140>
+    Bright
+  </button>
+
+  <svg class="light-line" height="20" width="1000" abs left-200>
+    <line x1="0" y1="0" x2="1000" y2="0" style="stroke:rgb(255,255,255);stroke-width:5" />
+  </svg>
+
+  <!--""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""-->
+
+  <span class="sound-text" abs> Tracks : </span>
+
+  <button class="track-button left-btn" [style.backgroundColor]="darkButton.bgColor" [style.border]="darkButton.border" [style.color]="darkButton.color"
+    (click)="changeColor('dark')" [disabled]="darkButton.disabled" abs top-420>
+    Birds
+  </button>
+
+  <button class="track-button mid-btn" [style.backgroundColor]="nominalButton.bgColor" [style.border]="nominalButton.border"
+    [style.color]="nominalButton.color" (click)="changeColor('nominal')" [disabled]="nominalButton.disabled" abs top-420>
+    Nature
+  </button>
+
+  <button class="track-button right-btn" [style.backgroundColor]="brightButton.bgColor" [style.border]="brightButton.border"
+    [style.color]="brightButton.color" (click)="changeColor('bright')" [disabled]="brightButton.disabled" abs top-420>
+    Music
+  </button>
+
+  <button class="normal-button left-btn" [style.backgroundColor]="darkButton.bgColor" [style.border]="darkButton.border" [style.color]="darkButton.color"
+    (click)="changeColor('dark')" [disabled]="darkButton.disabled" abs top-420>
+    Dark
+  </button>
+
+  <button class="normal-button mid-btn" [style.backgroundColor]="nominalButton.bgColor" [style.border]="nominalButton.border"
+    [style.color]="nominalButton.color" (click)="changeColor('nominal')" [disabled]="nominalButton.disabled" abs top-420>
+    Nominal
+  </button>
+
+  <button class="normal-button right-btn" [style.backgroundColor]="brightButton.bgColor" [style.border]="brightButton.border"
+    [style.color]="brightButton.color" (click)="changeColor('bright')" [disabled]="brightButton.disabled" abs top-420>
+    Bright
+  </button>
+
+  <svg class="sound-line" height="20" width="1000" abs left-200>
+    <line x1="0" y1="0" x2="1000" y2="0" style="stroke:rgb(255,255,255);stroke-width:5" />
+  </svg>
+
+  <!--""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""-->
+
 </ion-content>
