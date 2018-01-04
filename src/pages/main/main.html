@@ -4,15 +4,23 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>main</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-content padding bg>
+    <ion-fab class="toilet1-pos" #fab1>
+        <button ion-fab class="fabi" [color]="toilet1Color"><ion-icon [name]="toilet1"></ion-icon></button>
+        <ion-fab-list class="top-left">
+            <button ion-fab class="fabi" (click)="navigate('toilet1', 'scent', fab1)" color="primary"><ion-icon name="icon-scent-all"></ion-icon></button>
+        </ion-fab-list>
+        <ion-fab-list class="top-right">
+            <button ion-fab class="fabi" (click)="navigate('toilet1', 'clo2', fab1)" color="secondary"><ion-icon name="icon-alcohol"></ion-icon></button>
+        </ion-fab-list>
+    </ion-fab>
+    <ion-fab class="toilet2-pos" #fab2>
+        <button ion-fab class="fabi" [color]="toilet2Color"><ion-icon [name]="toilet2"></ion-icon></button>
+        <ion-fab-list class="top-left">
+            <button ion-fab class="fabi" (click)="navigate('toilet2', 'scent', fab2)" color="primary"><ion-icon name="icon-scent-all"></ion-icon></button>
+        </ion-fab-list>
+        <ion-fab-list class="top-right">
+            <button ion-fab class="fabi" (click)="navigate('toilet2', 'clo2', fab2)" color="secondary"><ion-icon name="icon-alcohol"></ion-icon></button>
+        </ion-fab-list>
+    </ion-fab>
 </ion-content>

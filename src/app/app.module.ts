@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MainPage } from '../pages/main/main';
+import { Clo2Page } from '../pages/clo2/clo2';
 import { UrlsProvider } from '../providers/urls/urls';
 import { LightHttpProvider } from '../providers/light-http/light-http';
 import { MusicHttpProvider } from '../providers/music-http/music-http';
@@ -18,7 +19,8 @@ import { ScentHttpProvider } from '../providers/scent-http/scent-http';
   declarations: [
     MyApp,
     MainPage,
-    HomePage
+    HomePage,
+    Clo2Page
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { ScentHttpProvider } from '../providers/scent-http/scent-http';
   entryComponents: [
     MyApp,
     MainPage,
-    HomePage
+    HomePage,
+    Clo2Page
   ],
   providers: [
     StatusBar,

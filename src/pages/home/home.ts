@@ -72,7 +72,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private screenOrientation: ScreenOrientation, public lightProvider: LightHttpProvider, public musicProvider: MusicHttpProvider, public scentProvider: ScentHttpProvider) {
 
-    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+    //this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
 
     this.defaultLightButtonColors();
     this.defaultTrackButtonColors();
