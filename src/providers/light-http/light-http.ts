@@ -31,7 +31,7 @@ export class LightHttpProvider {
 
     let lightUrl = this.urlsProvider.getUrl(device)
 
-    this.http.put("http://" + lightUrl, payload)
+    this.http.put(lightUrl, payload)
       .subscribe(data => {
       }, err => {
         console.log(JSON.stringify(err));
@@ -47,7 +47,7 @@ export class LightHttpProvider {
 
     let lightUrl = this.urlsProvider.getUrl(device)
 
-    this.http.put("http://" + lightUrl, payload)
+    this.http.put(lightUrl, payload)
       .subscribe(data => {
       }, err => {
         console.log(err)

@@ -1,94 +1,99 @@
 <ion-content padding>
-    <button class="main-button light-main" (click)="toggle('light')" abs left-25>
+  <button class="main-button light-main" (click)="toggle('light')" abs left-25>
     <ion-icon [name]="lightStatus ? 'icon-light' :'icon-light-off'"> </ion-icon>
   </button>
-    <button class="main-button sound-main" (click)="toggle('sound')" abs left-25>
+  <button class="main-button sound-main" (click)="toggle('sound')" abs left-25>
     <ion-icon [name]="soundStatus ? 'volume-up' :'volume-off'"></ion-icon>
   </button>
-    <button class="main-button scent-main" (click)="toggle('scent')" abs left-25>
+  <button class="main-button scent-main" (click)="toggle('scent')" abs left-25>
     <ion-icon [name]="scentStatus ? 'icon-scent' :'icon-scent-off'"></ion-icon>
   </button>
 
-    <!--""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""-->
+  <!--""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""-->
 
-    <button class="normal-button mid-btn light-white" [style.backgroundColor]="whiteButton.bgColor" [style.border]="whiteButton.border" [style.color]="whiteButton.color" (click)="changeColor('white')" [disabled]="whiteButton.disabled" abs>
+  <button class="normal-button mid-btn light-white" [style.backgroundColor]="whiteButton.bgColor" [style.border]="whiteButton.border"
+    [style.color]="whiteButton.color" (click)="changeColor('white')" [disabled]="whiteButton.disabled" abs>
     White
   </button>
 
-    <button class="normal-button left-btn" [style.backgroundColor]="darkButton.bgColor" [style.border]="darkButton.border" [style.color]="darkButton.color" (click)="changeColor('dark')" [disabled]="darkButton.disabled" abs top-140>
+  <button class="normal-button left-btn" [style.backgroundColor]="darkButton.bgColor" [style.border]="darkButton.border" [style.color]="darkButton.color"
+    (click)="changeColor('dark')" [disabled]="darkButton.disabled" abs top-140>
     Dark
   </button>
 
-    <button class="normal-button mid-btn" [style.backgroundColor]="nominalButton.bgColor" [style.border]="nominalButton.border" [style.color]="nominalButton.color" (click)="changeColor('nominal')" [disabled]="nominalButton.disabled" abs top-140>
+  <button class="normal-button mid-btn" [style.backgroundColor]="nominalButton.bgColor" [style.border]="nominalButton.border"
+    [style.color]="nominalButton.color" (click)="changeColor('nominal')" [disabled]="nominalButton.disabled" abs top-140>
     Nominal
   </button>
 
-    <button class="normal-button right-btn" [style.backgroundColor]="brightButton.bgColor" [style.border]="brightButton.border" [style.color]="brightButton.color" (click)="changeColor('bright')" [disabled]="brightButton.disabled" abs top-140>
+  <button class="normal-button right-btn" [style.backgroundColor]="brightButton.bgColor" [style.border]="brightButton.border"
+    [style.color]="brightButton.color" (click)="changeColor('bright')" [disabled]="brightButton.disabled" abs top-140>
     Bright
   </button>
 
-    <svg class="light-line" height="20" width="1000" abs left-200>
+  <svg class="light-line" height="20" width="1000" abs left-200>
     <line x1="0" y1="0" x2="1000" y2="0" style="stroke:rgb(255,255,255);stroke-width:5" />
   </svg>
 
-    <!--""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""-->
+  <!--""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""-->
 
-    <span class="sound-text" abs> Tracks : </span>
+  <span class="sound-text" abs> Tracks : </span>
 
-    <button class="track-button first-btn" [style.backgroundColor]="birdButton.bgColor" [style.border]="birdButton.border" [style.color]="birdButton.color" (click)="changeTrack('bird')" [disabled]="birdButton.disabled" abs top-280>
+  <button class="track-button first-btn" [style.backgroundColor]="birdButton.bgColor" [style.border]="birdButton.border" [style.color]="birdButton.color"
+    (click)="changeTrack('bird')" [disabled]="birdButton.disabled" abs top-280>
     Birds
   </button>
 
-    <button class="track-button second-btn" [style.backgroundColor]="natureButton.bgColor" [style.border]="natureButton.border" [style.color]="natureButton.color" (click)="changeTrack('nature')" [disabled]="natureButton.disabled" abs top-280>
+  <button class="track-button second-btn" [style.backgroundColor]="natureButton.bgColor" [style.border]="natureButton.border"
+    [style.color]="natureButton.color" (click)="changeTrack('nature')" [disabled]="natureButton.disabled" abs top-280>
     Nature
   </button>
 
-    <button class="track-button third-btn" [style.backgroundColor]="musicButton.bgColor" [style.border]="musicButton.border" [style.color]="musicButton.color" (click)="changeTrack('music')" [disabled]="musicButton.disabled" abs top-280>
+  <button class="track-button third-btn" [style.backgroundColor]="musicButton.bgColor" [style.border]="musicButton.border"
+    [style.color]="musicButton.color" (click)="changeTrack('music')" [disabled]="musicButton.disabled" abs top-280>
     Music
   </button>
 
-    <button class="normal-button left-btn" [style.backgroundColor]="lowButton.bgColor" [style.border]="lowButton.border" [style.color]="lowButton.color" (click)="changeVolume('low')" [disabled]="lowButton.disabled" abs top-420>
+  <button class="normal-button left-btn" [style.backgroundColor]="lowButton.bgColor" [style.border]="lowButton.border" [style.color]="lowButton.color"
+    (click)="changeVolume('low')" [disabled]="lowButton.disabled" abs top-420>
     Low &nbsp;
     <ion-icon name="icon-volume-low"></ion-icon>
   </button>
 
-    <button class="normal-button mid-btn" [style.backgroundColor]="medButton.bgColor" [style.border]="medButton.border" [style.color]="medButton.color" (click)="changeVolume('med')" [disabled]="medButton.disabled" abs top-420>
+  <button class="normal-button mid-btn" [style.backgroundColor]="medButton.bgColor" [style.border]="medButton.border" [style.color]="medButton.color"
+    (click)="changeVolume('med')" [disabled]="medButton.disabled" abs top-420>
     Nominal &nbsp;
     <ion-icon name="icon-volume-med"></ion-icon>
   </button>
 
-    <button class="normal-button right-btn" [style.backgroundColor]="highButton.bgColor" [style.border]="highButton.border" [style.color]="highButton.color" (click)="changeVolume('high')" [disabled]="highButton.disabled" abs top-420>
+  <button class="normal-button right-btn" [style.backgroundColor]="highButton.bgColor" [style.border]="highButton.border" [style.color]="highButton.color"
+    (click)="changeVolume('high')" [disabled]="highButton.disabled" abs top-420>
     High &nbsp;
     <ion-icon name="icon-volume-high"></ion-icon>
   </button>
 
-    <svg class="sound-line" height="20" width="1000" abs left-200>
+  <svg class="sound-line" height="20" width="1000" abs left-200>
     <line x1="0" y1="0" x2="1000" y2="0" style="stroke:rgb(255,255,255);stroke-width:5" />
   </svg>
 
-    <!--""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""-->
+  <!--""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""-->
 
-    <span class="scent-text" abs> Scent </span>
+  <button class="normal-button left-btn" [style.backgroundColor]="lowIntButton.bgColor" [style.border]="lowIntButton.border"
+    [style.color]="lowIntButton.color" (click)="changeIntensity('low')" [disabled]="lowIntButton.disabled" abs top-675>
+    Low &nbsp;
+    <ion-icon name="icon-scent-low"></ion-icon>
+  </button>
 
-    <ion-toggle class="scent-toggle" [(ngModel)]="scent" abs color="secondary"></ion-toggle>
+  <button class="normal-button mid-btn" [style.backgroundColor]="medIntButton.bgColor" [style.border]="medIntButton.border"
+    [style.color]="medIntButton.color" (click)="changeIntensity('med')" [disabled]="medIntButton.disabled" abs top-675>
+    Nominal &nbsp;
+    <ion-icon name="icon-scent-med"></ion-icon>
+  </button>
 
-    <span class="clo2-text" abs> ClO2 </span>
-
-    <ion-toggle class="clo2-toggle" [(ngModel)]="clo2" abs color="secondary"></ion-toggle>
-
-    <button class="normal-button left-btn" [style.backgroundColor]="lowButton.bgColor" [style.border]="lowButton.border" [style.color]="lowButton.color" (click)="changeIntensity('low')" [disabled]="lowButton.disabled" abs top-675>
-      Low &nbsp;
-      <ion-icon name="icon-scent-low"></ion-icon>
-    </button>
-
-    <button class="normal-button mid-btn" [style.backgroundColor]="medButton.bgColor" [style.border]="medButton.border" [style.color]="medButton.color" (click)="changeIntensity('med')" [disabled]="medButton.disabled" abs top-675>
-      Nominal &nbsp;
-      <ion-icon name="icon-scent-med"></ion-icon>
-    </button>
-
-    <button class="normal-button right-btn" [style.backgroundColor]="highButton.bgColor" [style.border]="highButton.border" [style.color]="highButton.color" (click)="changeIntensity('high')" [disabled]="highButton.disabled" abs top-675>
-      High &nbsp;
-      <ion-icon name="icon-scent-all"></ion-icon>
-    </button>
+  <button class="normal-button right-btn" [style.backgroundColor]="highIntButton.bgColor" [style.border]="highIntButton.border"
+    [style.color]="highIntButton.color" (click)="changeIntensity('high')" [disabled]="highIntButton.disabled" abs top-675>
+    High &nbsp;
+    <ion-icon name="icon-scent-all"></ion-icon>
+  </button>
 
 </ion-content>

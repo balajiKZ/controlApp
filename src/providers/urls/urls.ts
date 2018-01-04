@@ -11,9 +11,10 @@ import { Injectable } from '@angular/core';
 export class UrlsProvider {
 
   private urlList: any = {
-    raspMenMusic: '192.168.1.105:5000/',
-    hueLightMen: '192.168.1.52/api/RDYDu5Y6mpqAZaQjMkjjJ01zn0JcJW-1Dqqr5ts9/lights/1/state',
-    hueLightWomen: '192.168.1.52/api/RDYDu5Y6mpqAZaQjMkjjJ01zn0JcJW-1Dqqr5ts9/lights/2/state'
+    raspMenMusic: 'http://192.168.1.105:5000',
+    dualMen: 'http://192.168.1.169:80',
+    hueLightMen: 'http://192.168.1.52/api/RDYDu5Y6mpqAZaQjMkjjJ01zn0JcJW-1Dqqr5ts9/lights/1/state',
+    hueLightWomen: 'http://192.168.1.52/api/RDYDu5Y6mpqAZaQjMkjjJ01zn0JcJW-1Dqqr5ts9/lights/2/state'
   }
 
   constructor(public http: HttpClient) {

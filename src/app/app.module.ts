@@ -8,13 +8,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { MainPage } from '../pages/main/main';
 import { UrlsProvider } from '../providers/urls/urls';
 import { LightHttpProvider } from '../providers/light-http/light-http';
 import { MusicHttpProvider } from '../providers/music-http/music-http';
+import { ScentHttpProvider } from '../providers/scent-http/scent-http';
 
 @NgModule({
   declarations: [
     MyApp,
+    MainPage,
     HomePage
   ],
   imports: [
@@ -25,6 +28,7 @@ import { MusicHttpProvider } from '../providers/music-http/music-http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    MainPage,
     HomePage
   ],
   providers: [
@@ -34,7 +38,8 @@ import { MusicHttpProvider } from '../providers/music-http/music-http';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     UrlsProvider,
     LightHttpProvider,
-    MusicHttpProvider
+    MusicHttpProvider,
+    ScentHttpProvider
   ]
 })
 export class AppModule { }
