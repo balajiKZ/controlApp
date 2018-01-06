@@ -1,3 +1,69 @@
 page-clo2 {
+    ion-content {
+        background-image: url('../assets/imgs/background.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .heading-text{
+        top:50px;
+        left: 44%;
+        font-size: 4rem;
+    }
+    .access-text{
+        top: 15%;
+        right:18%;
+        color:#32db64;
+    }
+    .clock-text{
+        top: 15%;
+        left:25%;
+    }
+    .start-text{
+        top: 25%;
+        left:25%;
+    }
+    .stop-text{
+        top: 25%;
+        right:25%;
+    }
+    .time{
+        background-color: white;
+        width: 170px;
+        height: 80px;
+        border-radius: 2rem;
+        text-align: center;
+        padding-top: 23px; 
+    }
 
+    .start{
+        top: 31%;
+        left:20%;
+    }
+
+    .stop{
+        top: 31%;
+        right:20%;
+    }
+
+    .toggle{
+        top: 15%;
+        left:45%;
+    }
+
+    .proximity-btn{
+        top: 42%;
+        right:40%;
+        padding-top:10px;
+    }
+
+    .clo2-btn{
+        top: 33%;
+        right:40%;
+    }
+    .access-line{
+        top:21%;
+    }
+    .graph-line{
+        top:50%;
+    }
 }

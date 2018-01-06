@@ -23,6 +23,18 @@
     background-position: center center;
 }
 
+[fnt-3]{
+    font-size: 3rem;
+}
+
+[fnt-white]{
+    color: white;
+}
+
+[fnt-black]{
+    color: black;
+}
+
 [left-25] {
     left: 25px;
 }
@@ -45,4 +57,10 @@
 
 [top-675] {
     top: 610px;
+}
+[normal-button]{
+    width: 150px;
+    height: 50px;
+    border-radius: 2rem;
+    font-size: 2rem;
 }

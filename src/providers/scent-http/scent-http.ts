@@ -63,10 +63,33 @@ export class ScentHttpProvider {
   errorController(err) {
     const alert = this.alertCtrl.create({
       title: 'Error',
-      subTitle: err,
+      subTitle: err.status,
+      message: err.message,
       buttons: ['Dismiss']
     });
     alert.present();
+  }
+
+  accessCartridge(device, cartridge, state) {
+    let ipAddress = this.urlsProvider.getUrl(device);
+    this.http.post(ipAddress + '/' + cartridge + '/' + state, {})
+      .subscribe(data => {
+
+      },
+      err => {
+        this.errorController(err);
+      });
+  }
+
+  accessWithUrl(device, content, body) {
+    let ipAddress = this.urlsProvider.getUrl(device);
+    this.http.put(ipAddress + content, body)
+      .subscribe(data => {
+
+      },
+      err => {
+        this.errorController(err);
+      });
   }
 
 }
