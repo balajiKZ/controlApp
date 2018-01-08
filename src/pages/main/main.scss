@@ -2,14 +2,25 @@ page-main {
     .fabi {
         width: 65px !important;
         height: 65px !important;
-        font-size: 3.5rem;
     }
     .fabi ion-icon {
         font-size: 3.5rem;
     }
+    .fabi2 {
+        width: 100px !important;
+        height: 100px !important;
+        font-weight: bold;
+    }
+    .fabi2 ion-icon {
+        font-size: 5.5rem;
+    }
     .toilet1-pos {
         top: 17%;
         right: 36%;
+    }
+    .main-pos {
+        top: 65%;
+        right: 44%;
     }
     .toilet2-pos {
         top: 17%;
@@ -20,5 +31,17 @@ page-main {
     }
     .top-right {
         margin: -75px 43px;
+    }
+    .left-m {
+        margin: 0px -120px;
+    }
+    .right-m {
+        margin: 0px 120px;
+    }
+    .bottom-m {
+        margin: 110px 0px;
+    }
+    .top-m {
+        margin: -130px 0px;
     }
 }

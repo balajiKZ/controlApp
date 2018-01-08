@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams, FabContainer } from 'ionic-angular
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { Clo2Page } from '../clo2/clo2';
 import { HomePage } from '../home/home';
+import { LightHomePage } from '../light-home/light-home';
+import { MeetingHomePage } from '../meeting-home/meeting-home';
+import { Chart } from 'chart.js';
 
 /**
  * Generated class for the MainPage page.
@@ -20,8 +23,10 @@ export class MainPage {
 
   private toilet1: string = 'icon-toilet';
   private toilet2: string = 'icon-toilet';
+  private meeting: string = 'icon-meeting';
   private toilet1Color: string = 'danger';
   private toilet2Color: string = 'danger';
+  private meetingColor: string = 'danger';
 
   constructor(public navCtrl: NavController, private screenOrientation: ScreenOrientation, public navParams: NavParams) {
 
@@ -57,7 +62,28 @@ export class MainPage {
           this.navCtrl.push(Clo2Page, { room: 'toilet2' });
         }
         break;
+      case 'light':
+        this.meetingColor = 'secondary';
+        this.meeting = 'icon-light';
+        this.navCtrl.push(LightHomePage);
+        break;
+      case 'meeting':
+        if (type == 'blue') {
+          this.meetingColor = 'primary';
+          this.meeting = 'icon-meeting';
+          this.navCtrl.push(MeetingHomePage, { room: 'Strategy Meeting' });
+        } else if (type == 'red') {
+          this.meetingColor = 'danger';
+          this.meeting = 'icon-meeting';
+          this.navCtrl.push(MeetingHomePage, { room: 'Deal-Closing Meeting' });
+        }else if (type == 'therapy') {
+          this.meetingColor = 'light';
+          this.meeting = 'icon-meeting';
+          this.navCtrl.push(MeetingHomePage, { room: 'Light Theraphy' });
+        }
+        break;
     }
+
     fab.close();
   }
 

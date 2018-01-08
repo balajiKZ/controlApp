@@ -1,0 +1,49 @@
+page-meeting-home {
+    .theme-text {
+        top: 2%;
+        left: 30%;
+    }
+    .toggle-button {
+        top: 10%;
+        left: 35%;
+        width: 200px;
+        height: 200px;
+        border-radius: 10rem;
+        font-size: 5rem;
+    }
+    .toggle-line {
+        top: 30%;
+    }
+    .volume-line {
+        top: 50%;
+    }
+    .round-button {
+        top: 36%;
+        width: 100px;
+        height: 100px;
+        border-radius: 10rem;
+        background-color: black;
+        border: 2px solid white;
+        color: white;
+        font-size: 4rem;
+    }
+    .left-btn {
+        left: 13%;
+    }
+    .mid-btn {
+        left: 42%;
+    }
+    .right-btn {
+        left: 72%;
+    }
+    .volume-text {
+        top: 55%;
+        left: 13%;
+    }
+    .range {
+        top: 60%;
+        left: 10%;
+        width: 80%;
+        color: white;
+    }
+}

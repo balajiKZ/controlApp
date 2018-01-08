@@ -92,4 +92,17 @@ export class ScentHttpProvider {
       });
   }
 
+  getData(device, content, body) {
+    let ipAddress = this.urlsProvider.getUrl(device);
+    let data;
+    this.http.get(ipAddress + content, body)
+      .subscribe(data => {
+        console.log(data);
+      },
+      err => {
+        this.errorController(err);
+      });
+    return data;
+  }
+
 }

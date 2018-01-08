@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AlertController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/timeout';
 import 'rxjs/add/operator/catch';
@@ -15,7 +16,7 @@ import { UrlsProvider } from '../urls/urls';
 @Injectable()
 export class LightHttpProvider {
 
-  constructor(public http: HttpClient, public urlsProvider: UrlsProvider) {
+  constructor(public http: HttpClient, public urlsProvider: UrlsProvider, public alertCtrl: AlertController,) {
     console.log('Hello LightHttpProvider Provider');
   }
 
@@ -34,9 +35,19 @@ export class LightHttpProvider {
     this.http.put(lightUrl, payload)
       .subscribe(data => {
       }, err => {
-        console.log(JSON.stringify(err));
+        this.errorController(err);
       }
       );
+  }
+
+  errorController(err) {
+    const alert = this.alertCtrl.create({
+      title: 'Error',
+      subTitle: err.status,
+      message: err.message,
+      buttons: ['Dismiss']
+    });
+    alert.present();
   }
 
   //function to turn of hue light
@@ -50,9 +61,53 @@ export class LightHttpProvider {
     this.http.put(lightUrl, payload)
       .subscribe(data => {
       }, err => {
-        console.log(err)
+        this.errorController(err);
       }
       );
+  }
+
+  changeRoomLights(body){
+    let light1 = this.urlsProvider.getUrl('egloLight1');
+    let light2 = this.urlsProvider.getUrl('egloLight2');
+    let light3 = this.urlsProvider.getUrl('egloLight3');
+    let light4 = this.urlsProvider.getUrl('egloLight4');
+    this.http.post(light1, body)
+      .subscribe(data => {
+      }, err => {
+        this.errorController(err);
+      }
+      );
+      this.http.post(light2, body)
+      .subscribe(data => {
+      }, err => {
+        this.errorController(err);
+      }
+      );
+      this.http.post(light3, body)
+      .subscribe(data => {
+      }, err => {
+        this.errorController(err);
+      }
+      );
+      this.http.post(light4, body)
+      .subscribe(data => {
+      }, err => {
+        this.errorController(err);
+      }
+      );
+
+  }
+
+  getlightStatus(){
+    let light1 = this.urlsProvider.getUrl('egloLight1');
+    let data;
+    this.http.get(light1)
+      .subscribe(data => {
+      }, err => {
+        this.errorController(err);
+      }
+      );
+    return data;
   }
 
 }

@@ -1,0 +1,69 @@
+<!--
+  Generated template for the LightHomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding bg-b>
+    <span abs fnt-white fnt-4 class="light-text">Lights</span>
+    <span abs fnt-white fnt-3 class="func-text">Functional</span>
+    <button class="normal-button left-btn" [style.backgroundColor]="projButton.bgColor" [style.border]="projButton.border" [style.color]="projButton.color" (click)="changeColor('proj')" [disabled]="projButton.disabled" abs>
+        Projector
+    </button>
+    <button class="normal-button mid-btn" [style.backgroundColor]="readButton.bgColor" [style.border]="readButton.border" [style.color]="readButton.color" (click)="changeColor('read')" [disabled]="readButton.disabled" abs>
+          Reading
+    </button>
+    <button class="normal-button right-btn" [style.backgroundColor]="therapyButton.bgColor" [style.border]="therapyButton.border" [style.color]="therapyButton.color" (click)="changeColor('therapy')" [disabled]="therapyButton.disabled" abs>
+            Therapy
+    </button>
+    <svg class="functional-line" height="20" width="760" abs>
+    <line x1="0" y1="0" x2="760" y2="0" style="stroke:rgb(255,255,255);stroke-width:5" />
+  </svg>
+    <svg class="vertical-line-1" height="600" width="20" abs>
+    <line x1="0" y1="0" x2="0" y2="600" style="stroke:rgb(255,255,255);stroke-width:5" />
+  </svg>
+    <svg class="vertical-line-2" height="600" width="20" abs>
+    <line x1="0" y1="0" x2="0" y2="600" style="stroke:rgb(255,255,255);stroke-width:5" />
+  </svg>
+    <span abs fnt-white fnt-3 class="color-text">Colors</span>
+    <span abs fnt-white fnt-2-5 class="bright-text">Bright</span>
+    <button class="color-button one-btn" [style.backgroundColor]="brightRed.bgColor" [style.border]="brightRed.border" [style.color]="brightRed.color" (click)="changeColor('brightRed')" [disabled]="brightRed.disabled" abs left-12>   
+      </button>
+    <button class="color-button two-btn" [style.backgroundColor]="brightBlue.bgColor" [style.border]="brightBlue.border" [style.color]="brightBlue.color" (click)="changeColor('brightBlue')" [disabled]="brightBlue.disabled" abs left-12>   
+      </button>
+    <button class="color-button three-btn" [style.backgroundColor]="brightGreen.bgColor" [style.border]="brightGreen.border" [style.color]="brightGreen.color" (click)="changeColor('brightGreen')" [disabled]="brightGreen.disabled" abs left-12>   
+      </button>
+    <button class="color-button four-btn" [style.backgroundColor]="brightPurple.bgColor" [style.border]="brightPurple.border" [style.color]="brightPurple.color" (click)="changeColor('brightPurple')" [disabled]="brightPurple.disabled" abs left-12>  
+      </button>
+    <button class="color-button five-btn" [style.backgroundColor]="brightOrange.bgColor" [style.border]="brightOrange.border" [style.color]="brightOrange.color" (click)="changeColor('brightOrange')" [disabled]="brightOrange.disabled" abs left-12>   
+      </button>
+    <button class="color-button six-btn" [style.backgroundColor]="brightYellow.bgColor" [style.border]="brightYellow.border" [style.color]="brightYellow.color" (click)="changeColor('brightYellow')" [disabled]="brightYellow.disabled" abs left-12>   
+      </button>
+    <span abs fnt-white fnt-2-5 class="exact-text">Exact</span>
+    <button class="color-button one-btn" [style.backgroundColor]="red.bgColor" [style.border]="red.border" [style.color]="red.color" (click)="changeColor('red')" [disabled]="red.disabled" abs left-44>   
+      </button>
+    <button class="color-button two-btn" [style.backgroundColor]="blue.bgColor" [style.border]="blue.border" [style.color]="blue.color" (click)="changeColor('blue')" [disabled]="blue.disabled" abs left-44>   
+      </button>
+    <button class="color-button three-btn" [style.backgroundColor]="green.bgColor" [style.border]="green.border" [style.color]="green.color" (click)="changeColor('green')" [disabled]="green.disabled" abs left-44>   
+      </button>
+    <button class="color-button four-btn" [style.backgroundColor]="purple.bgColor" [style.border]="purple.border" [style.color]="purple.color" (click)="changeColor('purple')" [disabled]="purple.disabled" abs left-44>  
+      </button>
+    <button class="color-button five-btn" [style.backgroundColor]="orange.bgColor" [style.border]="orange.border" [style.color]="orange.color" (click)="changeColor('orange')" [disabled]="orange.disabled" abs left-44>   
+      </button>
+    <button class="color-button six-btn" [style.backgroundColor]="yellow.bgColor" [style.border]="yellow.border" [style.color]="yellow.color" (click)="changeColor('yellow')" [disabled]="yellow.disabled" abs left-44>   
+      </button>
+    <span abs fnt-white fnt-2-5 class="dark-text">Dark</span>
+    <button class="color-button one-btn" [style.backgroundColor]="darkRed.bgColor" [style.border]="darkRed.border" [style.color]="darkRed.color" (click)="changeColor('darkRed')" [disabled]="darkRed.disabled" abs left-76>   
+      </button>
+    <button class="color-button two-btn" [style.backgroundColor]="darkBlue.bgColor" [style.border]="darkBlue.border" [style.color]="darkBlue.color" (click)="changeColor('darkBlue')" [disabled]="darkBlue.disabled" abs left-76>   
+      </button>
+    <button class="color-button three-btn" [style.backgroundColor]="darkGreen.bgColor" [style.border]="darkGreen.border" [style.color]="darkGreen.color" (click)="changeColor('darkGreen')" [disabled]="darkGreen.disabled" abs left-76>   
+      </button>
+    <button class="color-button four-btn" [style.backgroundColor]="darkPurple.bgColor" [style.border]="darkPurple.border" [style.color]="darkPurple.color" (click)="changeColor('darkPurple')" [disabled]="darkPurple.disabled" abs left-76>  
+      </button>
+    <button class="color-button five-btn" [style.backgroundColor]="darkOrange.bgColor" [style.border]="darkOrange.border" [style.color]="darkOrange.color" (click)="changeColor('darkOrange')" [disabled]="darkOrange.disabled" abs left-76>   
+      </button>
+    <button class="color-button six-btn" [style.backgroundColor]="darkYellow.bgColor" [style.border]="darkYellow.border" [style.color]="darkYellow.color" (click)="changeColor('darkYellow')" [disabled]="darkYellow.disabled" abs left-76>   
+      </button>
+</ion-content>

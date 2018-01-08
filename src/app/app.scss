@@ -23,15 +23,29 @@
     background-position: center center;
 }
 
-[fnt-3]{
+[bg-b] {
+    background-image: url('../assets/imgs/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+[fnt-4] {
+    font-size: 4rem;
+}
+
+[fnt-3] {
     font-size: 3rem;
 }
 
-[fnt-white]{
+[fnt-2-5] {
+    font-size: 2.5rem;
+}
+
+[fnt-white] {
     color: white;
 }
 
-[fnt-black]{
+[fnt-black] {
     color: black;
 }
 
@@ -58,7 +72,20 @@
 [top-675] {
     top: 610px;
 }
-[normal-button]{
+
+[left-12] {
+    left: 13%;
+}
+
+[left-44] {
+    left: 44%;
+}
+
+[left-76] {
+    left: 76%;
+}
+
+[normal-button] {
     width: 150px;
     height: 50px;
     border-radius: 2rem;

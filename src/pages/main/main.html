@@ -23,4 +23,19 @@
             <button ion-fab class="fabi" (click)="navigate('toilet2', 'clo2', fab2)" color="secondary"><ion-icon name="icon-alcohol"></ion-icon></button>
         </ion-fab-list>
     </ion-fab>
+    <ion-fab class="main-pos" #fab3>
+        <button ion-fab class="fabi2" [color]="meetingColor"><ion-icon [name]="meeting"></ion-icon></button>
+        <ion-fab-list class="top-m">
+            <button ion-fab class="fabi2" (click)="navigate('light', '', fab3)" color="secondary"><ion-icon name="icon-light"></ion-icon></button>
+        </ion-fab-list>
+        <ion-fab-list class="left-m">
+            <button ion-fab class="fabi2" (click)="navigate('meeting', 'blue', fab3)" color="primary">Strategy</button>
+        </ion-fab-list>
+        <ion-fab-list class="right-m">
+            <button ion-fab class="fabi2" (click)="navigate('meeting', 'red', fab3)" color="danger">Deal-closing</button>
+        </ion-fab-list>
+        <ion-fab-list class="bottom-m">
+            <button ion-fab class="fabi2" (click)="navigate('meeting', 'therapy', fab3)" color="light">Therapy</button>
+        </ion-fab-list>
+    </ion-fab>
 </ion-content>
