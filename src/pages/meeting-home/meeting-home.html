@@ -5,28 +5,32 @@
   Ionic pages and navigation.
 -->
 <ion-content padding bg-b>
-    <span fnt-4 class="theme-text" fnt-white abs>{{themeName}}</span>
-    <button class="toggle-button" [style.backgroundColor]="toggleBtn.bgColor" [style.border]="toggleBtn.border" [style.color]="toggleBtn.color" (click)="toggle('main')" abs>
-      {{toggleText}}
-    </button>
-    <svg class="toggle-line" height="20" width="760" abs>
-      <line x1="0" y1="0" x2="760" y2="0" style="stroke:rgb(255,255,255);stroke-width:5" />
-    </svg>
-    <button class="round-button left-btn" (click)="toggle('light')" abs>
-      <ion-icon [name]="lightStatus ? 'icon-light' :'icon-light-off'"></ion-icon>
-    </button>
-    <button class="round-button mid-btn" (click)="toggle('sound')" abs [disabled]="!meetingTheme">
-        <ion-icon [name]="soundStatus ? 'volume-up' :'volume-off'"></ion-icon>
-    </button>
-    <button class="round-button right-btn" (click)="toggle('scent')" abs>
-        <ion-icon [name]="scentStatus ? 'icon-scent' :'icon-scent-off'"></ion-icon>
-    </button>
-    <svg class="volume-line" height="20" width="760" abs>
-      <line x1="0" y1="0" x2="760" y2="0" style="stroke:rgb(255,255,255);stroke-width:5" />
-    </svg>
-    <span fnt-3 class="volume-text" fnt-white abs *ngIf="meetingTheme">Volume</span>
-    <ion-range min="0" max="10" step="1" [(ngModel)]="volume" abs class="range" *ngIf="meetingTheme">
-        <ion-icon large range-left name="icon-volume-plus"></ion-icon>
-        <ion-icon large range-right name="icon-volume-minus"></ion-icon>
-    </ion-range>
+  <button ion-button color="primary" back-button (click)="back()" abs>
+    <ion-icon name="arrow-back"></ion-icon>
+  </button>
+  <span fnt-4 class="theme-text" fnt-white abs>{{themeName}}</span>
+  <button class="toggle-button" [style.backgroundColor]="toggleBtn.bgColor" [style.border]="toggleBtn.border" [style.color]="toggleBtn.color"
+    (click)="toggle('main')" abs>
+    {{toggleText}}
+  </button>
+  <svg class="toggle-line" height="20" width="760" abs>
+    <line x1="0" y1="0" x2="760" y2="0" style="stroke:rgb(255,255,255);stroke-width:5" />
+  </svg>
+  <button class="round-button left-btn" (click)="toggle('light')" abs>
+    <ion-icon [name]="lightStatus ? 'icon-light' :'icon-light-off'"></ion-icon>
+  </button>
+  <button class="round-button mid-btn" (click)="toggle('sound')" abs [disabled]="!meetingTheme">
+    <ion-icon [name]="soundStatus ? 'volume-up' :'volume-off'"></ion-icon>
+  </button>
+  <button class="round-button right-btn" (click)="toggle('scent')" abs>
+    <ion-icon [name]="scentStatus ? 'icon-scent' :'icon-scent-off'"></ion-icon>
+  </button>
+  <svg class="volume-line" height="20" width="760" abs>
+    <line x1="0" y1="0" x2="760" y2="0" style="stroke:rgb(255,255,255);stroke-width:5" />
+  </svg>
+  <span fnt-3 class="volume-text" fnt-white abs *ngIf="meetingTheme">Volume</span>
+  <ion-range min="0" max="10" step="1" [(ngModel)]="volume" (ionChange)="volumeChange()" abs class="range" *ngIf="meetingTheme">
+    <ion-icon large range-left name="icon-volume-plus"></ion-icon>
+    <ion-icon large range-right name="icon-volume-minus"></ion-icon>
+  </ion-range>
 </ion-content>

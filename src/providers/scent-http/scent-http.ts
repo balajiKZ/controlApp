@@ -23,41 +23,33 @@ export class ScentHttpProvider {
     let ipAddress = this.urlsProvider.getUrl(device);
     this.http.post(ipAddress + "/timer/off", {})
       .subscribe(data => {
-        this.http.put(ipAddress + '/time/blow/element', { 'element': cart }).subscribe(data => {
-          // Next modify the time
-          this.http.put(ipAddress + '/time/blow', { 'onTime': onTime, 'offTime': offTime })
-            .subscribe(data => {
-              //Activate the timer as requested
-              let ip = ipAddress + "/timer/on";
-              // POST to the state to the device
-              var body = {};
-              this.http.post(ip, body)
-                .subscribe(data => {
-                },
-                err => {
-                  this.errorController(err);
-                });
-            },
-            err => {
-              this.errorController(err);
-            });
+        this.http.post(ipAddress + '/timer/on', { 'timer': cart, 'onTime': onTime, 'offTime': offTime }).subscribe(data => {
         },
           err => {
             this.errorController(err);
           });
       },
-      err => {
-        this.errorController(err);
-      });
+        err => {
+          this.errorController(err);
+        });
+  }
+
+  startTimer(device) {
+    let ipAddress = this.urlsProvider.getUrl(device);
+    this.http.post(ipAddress + "/timer/on", {})
+      .subscribe(data => { },
+        err => {
+          this.errorController(err);
+        });
   }
 
   stopTimer(device) {
     let ipAddress = this.urlsProvider.getUrl(device);
     this.http.post(ipAddress + "/timer/off", {})
       .subscribe(data => { },
-      err => {
-        this.errorController(err);
-      });
+        err => {
+          this.errorController(err);
+        });
   }
 
   errorController(err) {
@@ -76,9 +68,9 @@ export class ScentHttpProvider {
       .subscribe(data => {
 
       },
-      err => {
-        this.errorController(err);
-      });
+        err => {
+          this.errorController(err);
+        });
   }
 
   accessWithUrl(device, content, body) {
@@ -87,22 +79,22 @@ export class ScentHttpProvider {
       .subscribe(data => {
 
       },
-      err => {
-        this.errorController(err);
-      });
+        err => {
+          this.errorController(err);
+        });
   }
 
   getData(device, content, body) {
     let ipAddress = this.urlsProvider.getUrl(device);
-    let data;
+    let response;
     this.http.get(ipAddress + content, body)
       .subscribe(data => {
-        console.log(data);
+        response = data['response'];
       },
-      err => {
-        this.errorController(err);
-      });
-    return data;
+        err => {
+          this.errorController(err);
+        });
+    return response;
   }
 
 }

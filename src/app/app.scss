@@ -16,6 +16,15 @@
     position: absolute;
 }
 
+[back-button]{
+    top:2%;
+    right:3%;
+    width: 56px !important;
+    height: 56px !important;
+    font-size: 2.4rem;
+    border-radius:50% !important;
+}
+
 [bg] {
     background-image: url('../assets/imgs/roomPlan.png');
     background-size: 80% 80%;

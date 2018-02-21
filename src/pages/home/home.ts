@@ -54,6 +54,7 @@ export class HomePage {
     sat: 125,
     xy: [0.3127, 0.329]
   };
+
   private musicHistory: any = {
     device: 'raspMenMusic',
     level: 'nominal',
@@ -62,10 +63,11 @@ export class HomePage {
     loop: true,
     volume: 0.4,
   };
+
   private scentHistory: any = {
     device: 'dualMen',
     level: 'nominal',
-    cart: 1,
+    cart: 'cart2',
     onTime: 10,
     offTime: 50
   }
@@ -352,6 +354,11 @@ export class HomePage {
       color: 'black',
       disabled: false
     }
+  }
+
+  //Function to navigate back to the previous page
+  back() {
+    this.navCtrl.pop();
   }
 
 }

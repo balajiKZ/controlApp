@@ -1,6 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { HttpClient } from '@angular/common/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/timeout';
+import 'rxjs/add/operator/catch';
+import { UrlsProvider } from '../../providers/urls/urls';
 
 import { ScentHttpProvider } from '../../providers/scent-http/scent-http';
 import { Chart } from 'chart.js';
@@ -40,10 +45,10 @@ export class Clo2Page {
   private chartData: number[] = [-0.13, -0.12, -0.13, -0.4, -0.2, 0, 0.5];
   private chartTime: any[] = ["02:11:01", "02:11:05", "02:11:08", "02:11:11", "02:11:15", "02:11:18", "02:11:21"];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private screenOrientation: ScreenOrientation, public scentProvider: ScentHttpProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private screenOrientation: ScreenOrientation, public scentProvider: ScentHttpProvider, public http: HttpClient, public urlsProvider: UrlsProvider) {
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 
-  
+
   }
 
   ionViewDidLoad() {
@@ -56,7 +61,7 @@ export class Clo2Page {
         labels: this.chartTime,
         datasets: [
           {
-            label: "Clo2 Level",
+            label: "Clo2 Level (PPM)",
             fill: false,
             lineTension: 0.1,
             backgroundColor: "rgba(75,192,192,0.4)",
@@ -84,18 +89,26 @@ export class Clo2Page {
 
     var _this = this;
 
-    setInterval(function(){ 
-      var newNo=Math.floor(Math.random()*5)- 2.5;
-      //var newNo=_this.scentProvider.getData('sensor', '/value', {});
-      if(newNo != null && newNo != undefined){
-        _this.chartData.shift();
-        _this.chartData.push(newNo);
-      }
-      var time = new Date();
-      _this.chartTime.shift();
-      _this.chartTime.push(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
-      _this.lineChart.update();
-     }, 3000);
+    setInterval(function () {
+      //var newNo = Math.floor(Math.random() * 5) - 2.5;
+      //var newNo = _this.scentProvider.getData('sensor', '/value', {});
+      let ipAddress = _this.urlsProvider.getUrl('sensor');
+      _this.http.get(ipAddress + '/value', {})
+        .subscribe(data => {
+          let newNo = data['response'];
+          if (newNo != null && newNo != undefined) {
+            _this.chartData.shift();
+            _this.chartData.push(newNo);
+            var time = new Date();
+            _this.chartTime.shift();
+            _this.chartTime.push(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+            _this.lineChart.update();
+          }
+        },
+        err => {
+          console.log(err);
+        });
+    }, 3000);
   }
 
   toggleClo2() {
@@ -154,6 +167,11 @@ export class Clo2Page {
       stopStr = "0" + stopTemp + this.stopTime.slice(2) + ":00";
     }
     this.scentProvider.accessWithUrl('dualWomen', '/clock', { start: startStr, stop: stopStr });
+  }
+
+  //Function to navigate back to the previous page
+  back() {
+    this.navCtrl.pop();
   }
 
 }
