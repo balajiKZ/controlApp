@@ -12,6 +12,7 @@ export class UrlsProvider {
 
   private urlList: any = {
     raspMenMusic: 'http://192.168.1.195:5000',
+    raspWomenMusic: 'http://192.168.1.210:5000',
     dualMen: 'http://192.168.1.169:80',
     dualWomen: 'http://192.168.1.237:80',
     dualMain: 'http://192.168.1.21:80',

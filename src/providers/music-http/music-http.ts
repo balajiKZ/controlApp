@@ -20,7 +20,9 @@ export class MusicHttpProvider {
 
   // function to start the music in loop
   startMusicLoop(device, file, frmt) {
+    console.log(device);
     let musicUrl = this.urlProvider.getUrl(device);
+    console.log(musicUrl + "/start/music/loop?id=" + file + "&frmt=" + frmt);
     this.http.post(musicUrl + "/start/music/loop?id=" + file + "&frmt=" + frmt, {})
       .subscribe(data => {
       }, err => {
@@ -32,6 +34,7 @@ export class MusicHttpProvider {
   // function to start the music without loop
   startMusic(device, file, frmt) {
     let musicUrl = this.urlProvider.getUrl(device);
+    console.log(musicUrl + "/start/music?id=" + file + "&frmt=" + frmt);
     this.http.post(musicUrl + "/start/music?id=" + file + "&frmt=" + frmt, {})
       .subscribe(data => {
       }, err => {

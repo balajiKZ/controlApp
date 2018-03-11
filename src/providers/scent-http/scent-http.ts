@@ -97,4 +97,29 @@ export class ScentHttpProvider {
     return response;
   }
 
+  startEgloMulti(device, onTime, offTime) {
+    let ipAddress = this.urlsProvider.getUrl(device);
+    this.http.post(ipAddress + "/stop/scent", {})
+      .subscribe(data => {
+        this.http.post(ipAddress + '/start/scent?start=' + onTime + '&wait=' + offTime, {}).subscribe(data => {
+        },
+          err => {
+            this.errorController(err);
+          });
+      },
+        err => {
+          this.errorController(err);
+        });
+  }
+
+  stopEgloMulti(device) {
+    let ipAddress = this.urlsProvider.getUrl(device);
+    this.http.post(ipAddress + "/stop/scent", {})
+      .subscribe(data => {
+      },
+        err => {
+          this.errorController(err);
+        });
+  }
+
 }

@@ -50,6 +50,16 @@ export class LightHttpProvider {
     alert.present();
   }
 
+  changeColorEgloMulti(id, device) {
+    let lightUrl = this.urlsProvider.getUrl(device) + '/change/light?id=' + id;
+    this.http.post(lightUrl, {})
+      .subscribe(data => {
+      }, err => {
+        this.errorController(err);
+      }
+      );
+  }
+
   //function to turn of hue light
   turnOffHueLight(device) {
     let payload = {
@@ -122,4 +132,17 @@ export class LightHttpProvider {
     return data;
   }
 
+  getAllStatus(device) {
+    let lightUrl = this.urlsProvider.getUrl(device) + '/status';
+    let retData;
+    console.log(lightUrl);
+    this.http.get(lightUrl)
+      .subscribe(data => {
+        retData = data;
+        return retData;
+      }, err => {
+        this.errorController(err);
+      }
+      );
+  }
 }
